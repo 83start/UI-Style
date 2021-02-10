@@ -1,0 +1,39 @@
+.head1{
+  font-family: 'Lobster','Indie Flower';
+}
+
+.btn-danger{
+  position: relative;
+  top: 0px; /* change position here*/
+  /*animation: buttonMove 5s infinite;*/
+
+}
+.btn-primary{
+  position: relative;
+  top: 0px;
+}
+img{
+  width: 200px;
+  height: 400px;
+}
+
+@keyframes buttonMove {
+  0%   {top: 0px;}
+  /*75%  {top: 100px;} */
+  50%  {top: 500px;}
+  100% {top:0px;}
+
+}
+@keyframes buttonMove2{
+  0%   {top: 400px;
+    left:-200px;    }
+
+  25%  {top: 400px;
+    left:200px; }
+  50%  {top: 400px;
+    left:200px; }
+  75%  {top: 600px;
+    left:100px; }
+  100% {top: 600px;
+    left:-200px; }
+}

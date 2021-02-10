@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>基本的轻量级响应式jQuery幻灯片插件|DEMO1_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<style type="text/css">
+button {
+	color:#000; 
+	padding:16px 40px; 
+	border-radius:4px; 
+	border:1px solid #ccc; 
+	background:none; 
+	cursor:pointer; 
+	font-size:16px; 
+	margin:8px; 
+	border-bottom-width:2px;}
+button:hover {color:#308bbb;border-color:#308bbb;}
+.kiss-pagination button {padding:10px;}
+.container {max-width:900px; width:auto; padding:20px; border:1px solid #ddd; background:#fff; box-shadow:0 0 0.3em #ddd; margin:2em auto;}
+.kiss-slider{margin:20px auto;}
+.kiss-slider li img{width: 100%;}
+#example2 .kiss-pagination{}
+#example2 .kiss-pagination .current{}
+.text-center {text-align: center;}
+	</style>
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>基本的轻量级响应式jQuery幻灯片插件 <span>A flexible, responsive, yet simple jquery slideshow</span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/jQuery/Slideshow-Scroller/201604273396.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+			<div class="htmleaf-demo center">
+			  <a href="index.html" class="current">DEMO1</a>
+			  <a href="index2.html">DEMO2</a>
+			  <a href="index3.html">DEMO3</a>
+			</div>
+		</header>
+		<div class="container">
+			<div id="example1">
+				<h2>Example 1</h2>
+				<p>This is the basic usage of the plugin.</p>
+				<ul class="kiss-slider">
+					<li><img src="img/slide01.jpg" /></li>
+					<li><img src="img/slide02.jpg" /></li>
+					<li><img src="img/slide03.jpg" /></li>
+					<li><img src="img/slide04.jpg" /></li>
+					<li><img src="img/slide05.jpg" /></li>
+					<li><img src="img/slide06.jpg" /></li>
+				</ul>
+				<ul class="kiss-pagination text-center"></ul>
+				<p class="text-center">
+					<button type="button" class="previous">&larr; previous</button>
+					<button type="button" class="next">next &rarr;</button>
+				</p>
+			</div>
+		</div>
+		<div class="related">
+		    <h3>如果你喜欢这个插件，那么你可能也喜欢:</h3>
+		    <a href="http://www.htmleaf.com/jQuery/Slideshow-Scroller/201603253262.html">
+			  <img src="related/1.jpg" width="300" alt="hslider.js-简洁的响应式全屏宽度jQuery幻灯片插件"/>
+			  <h3>hslider.js-简洁的响应式全屏宽度jQuery幻灯片插件</h3>
+			</a>
+			<a href="http://www.htmleaf.com/jQuery/Slideshow-Scroller/201602243140.html">
+			  <img src="related/2.jpg" width="300" alt="基于GSAP的响应式全屏背景图片jQuery幻灯片插件"/>
+			  <h3>基于GSAP的响应式全屏背景图片jQuery幻灯片插件</h3>
+			</a>
+		</div>
+	</div>
+	
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery.kiss-slider.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#example1 .kiss-slider').kissSlider({
+				prevSelector: '#example1 .previous',
+				nextSelector: '#example1 .next',
+			});
+		})
+	</script>
+</body>
+</html>

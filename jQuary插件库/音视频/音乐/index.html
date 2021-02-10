@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML5迷你音频播放器插件|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" /><!--CSS RESET-->
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css"><!--演示页面样式，使用时可以不引用-->
+	<link rel="stylesheet" type="text/css" href="./dist/css/main.min.css">
+	<style>
+      .htmleaf-content { height: 600px; }
+
+      .htmleaf-content {
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #F8FFAE;
+          background: -webkit-linear-gradient(-65deg, #43C6AC, #F8FFAE);
+          background: linear-gradient(-65deg, #43C6AC, #F8FFAE);
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+      }
+  </style>
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>HTML5迷你音频播放器插件 <span>Audio Player javascript library</span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/html5/yinpinheshipin/201902145524.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+		</header>
+		<div class="htmleaf-content">
+			<div class="ready-player-1">
+	        <audio crossorigin>
+	            <source src="audio/example-2.mp3" type="audio/mpeg">
+	        </audio>
+	    </div>
+		</div>
+		<div class="related">
+		    <h3>如果你喜欢这个插件，那么你可能也喜欢:</h3>
+		    <a href="http://www.htmleaf.com/html5/yinpinheshipin/201608283925.html">
+				  <img src="related/1.jpg" width="300" alt="黑胶唱片风格音频播放器jQuery插件"/>
+				  <h3>黑胶唱片风格音频播放器jQuery插件</h3>
+				</a>
+				<a href="http://www.htmleaf.com/html5/yinpinheshipin/201512082879.html">
+				  <img src="related/2.jpg" width="300" alt="仿网易云音乐外链播放器UI的HTML5音乐播放器插件"/>
+				  <h3>仿网易云音乐外链播放器UI的HTML5音乐播放器插件</h3>
+				</a>
+		</div>
+	</div>
+	
+	<script src="./dist/js/app.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          new GreenAudioPlayer('.ready-player-1');
+      });
+  </script>
+</body>
+</html>

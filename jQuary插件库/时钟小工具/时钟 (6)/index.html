@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>两款炫酷的css3 loading预加载样式|DEMO1_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css"><!--演示页面样式，使用时可以不引用-->
+	<style>
+		.preloader{
+		    height: 100%;
+		    width: 100%;
+		    padding: 20px 0 20px;
+		    display: flex;
+		    flex-flow: column wrap;
+		    justify-content: center;
+		    align-content: center;
+		    align-items: center;
+		    perspective: 700;
+		}
+		.loader{
+		    text-align: center;
+		    margin: 5px;
+		    border-radius: 50%;
+		    border: 4px solid #fff;
+		    display: flex;
+		    flex-flow: column wrap;
+		    justify-content: center;
+		    align-content: center;
+		    align-items: center;
+		    transform-style: preserve-3d;
+		    position: relative;
+		}
+		.loader-inner-1{
+		    animation-delay: 0.2s;
+		    animation: change_first_circle 2s ease-in-out infinite;
+		}
+		.loader-inner-2{
+		    animation-delay: 0.2s;
+		    animation: change_second_circle 2s ease-in-out infinite;
+		}
+		.loader-inner-3{
+		    animation-delay: 0.2s;
+		    width: 100px;
+		    height: 100px;
+		    animation: change_last_circle 3s linear  infinite;
+		}
+		@keyframes change_first_circle {
+		    50%{ transform: rotateX(360deg) scale(0.8); }
+		}
+		@keyframes change_second_circle {
+		    50%{ transform: rotateY(360deg) scale(0.8); }
+		}
+		@keyframes change_last_circle {
+		    50%{ transform: rotateX(360deg) scale(0.8); }
+		}
+	</style>
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>两款炫酷的css3 loading预加载样式 <span>CSS3 Preloader Style</span></h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/css3/css3donghua/201901305516.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+			<div class="htmleaf-demo center">
+			  <a href="index.html" class="current">DEMO1</a>
+			  <a href="index2.html">DEMO2</a>
+			</div>
+		</header>
+		<div class="demo" style="min-height:350px;">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-md-12">
+	                    <div class="preloader">
+	                        <div class="loader loader-inner-1">
+	                            <div class="loader loader-inner-2">
+	                                <div class="loader loader-inner-3">
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+		<div class="related">
+		    <h3>如果你喜欢这个插件，那么你可能也喜欢:</h3>
+		    <a href="http://www.htmleaf.com/css3/css3donghua/201901045480.html">
+			  <img src="related/1.jpg" width="300" alt="4种炫酷CSS3 loading预加载动画特效"/>
+			  <h3>4种炫酷CSS3 loading预加载动画特效</h3>
+			</a>
+			<a href="http://www.htmleaf.com/css3/css3donghua/201809175330.html">
+			  <img src="related/2.jpg" width="300" alt="css3齿轮loading动画特效"/>
+			  <h3>css3齿轮loading动画特效</h3>
+			</a>
+		</div>
+	</div>
+
+</body>
+</html>

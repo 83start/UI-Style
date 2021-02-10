@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>点名</title>
+  <style>
+    /* 页面背景色 */
+    body {
+      background-color: gray;
+    }
+
+    /* 所有div居中 */
+    div {
+      text-align: center;
+    }
+
+    /* 设置显示时间区域大小、位置 */
+    #time {
+      text-align: right;
+      margin-right: 300px;
+      margin-bottom: 10px;
+      vertical-align: middle;
+    }
+
+    /* 开始停止标签区域和名单区域间隔*/
+    #divLast {
+      margin-top: 20px;
+    }
+
+    /* 开始和停止标签大小、背景颜色 */
+    input {
+      height: 30px;
+      width: 80px;
+      background-color: honeydew;
+    }
+
+    /* 名单表格居中显示 */
+    table {
+      margin: auto;
+    }
+
+    /* 每个表格大小、背景颜色、外边距 */
+    td {
+      height: 10px;
+      width: 80px;
+      background-color: lavenderblush;
+      /* margin:5px; */
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+<!-- 共四块区域；1、标题；2、时间；3、名单表格；4、开始和停止按钮 -->
+<div><h1>随机点名系统</h1></div>
+<!--时间  -->
+<div id="time"><b></b></div>
+<!-- 生成人员名字表格 -->
+<div>
+  <table>
+  </table>
+</div>
+<!-- 开始和停止按钮 -->
+<div id="divLast">
+  <span><input type="button" id="call" value="点名"/></span>
+  <span><input type="button" id="stop" value="停止"/></span>
+</div>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+  // 页面全部加载
+  $(function () {
+    //显示时间
+    setInterval(getTime, 1000);
+
+    function getTime() {
+      let date = new Date();
+      let t = date.toLocaleString();
+      let time = $("b");
+      time.text(t);
+    };
+
+
+    //人员名单字符串
+    let str = "名单";
+    //根据相应分隔符分割生成相应数组
+    let arr = str.split("分隔符");
+    //这里只要把名单数组做出来，不管用什么方法
+    //人员信息生成表方法
+    function info() {
+      //拼接生成表字符串；注意：使用``而不是''和""；
+      let html = `<tr>`;
+      //开始循环名单数组
+      for (let i = 0; i < arr.length; i++) {
+        //设定表格每行为8列；字符串中记得加入id；后面要使用随机要用到
+        if (i % 8 == 0) {
+          //个人设置的id为td+索引
+          //第八列换行
+          html += `</tr><tr><td id="td` + i + `">` + arr[i] + `</td>`;
+        } else {
+          html += `<td id="td` + i + `">` + arr[i] + `</td>`;
+        }
+      }
+      ;
+      html += `</tr>`;
+      //改变表内结构；这里会抹除table下原有内容；
+      $("table").html(html);
+    }
+
+    //调用人员信息生成表方法
+    info();
+
+    //开始切换
+    //定义定时器变量
+    let timer;
+    $("#call").click(function () {
+      //定时器
+      timer = setInterval(getName, 20);
+      //使自己不可再被选中；
+      $("#call").prop("disabled", true);
+      //使停止按钮可以被选中
+      $("#stop").prop("disabled", false);
+    });
+
+    //随机选中姓名
+    function getName() {
+      //每次选中前先恢复原样式；
+      $("td").css("background-color", "lavenderblush");
+      //根据名单数量开始生成相应随机数
+      let num = Math.floor(Math.random() * (arr.length));
+      //拼接id字符串
+      let s = "#td" + num;
+      //改变选中id的标签的背景颜色
+      $(s).css("background-color", "red");
+    };
+    //停止按钮
+    $("#stop").click(function () {
+      //消除定时器
+      clearInterval(timer);
+      //使自己不可再被选中；
+      $("#stop").prop("disabled", true);
+      //使开始按钮可以被选中
+      $("#call").prop("disabled", false);
+    });
+  });
+</script>
+</html>

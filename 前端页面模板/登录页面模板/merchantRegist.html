@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="./css/regist.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <script src="./js/jquery-1.7.2.min.js"></script>
+    <script src="./js/regist.js"></script>
+</head>
+
+<!-- 
+    ***************************   用户注册页面  *********************************
+ -->
+<body>
+    <div id="app" class="main">
+        <!-- 标题 -->
+        <div class="header">
+            <h1 id="welcome">商家注册</h1>
+        </div>
+
+        <p></p>
+
+        <div id="to_user">
+            <a href="./userLogin.html">我是用户</a>
+        </div>
+
+        <!-- 注册页面 -->
+        <form action="" onsubmit="">
+            <ul class="left-form">
+                <h2>新账户:</h2>
+                <div class="clear"> </div>
+
+                <li>
+                    <!-- 用户昵称 -->
+                    <input type="text" placeholder="商家账号：" required name="merchantId" autocomplete="off"  />
+                    <!-- 表单验证的图标 -->
+                    <a href="#" class="icon "> </a>
+                    <div class="clear"> </div>
+                </li>
+
+
+
+                <li>
+                    <!-- 用户真实姓名 -->
+                    <input type="text" placeholder="商家名称：" required name="merchantName" autocomplete="off"  />
+                    <!-- 表单验证的图标 -->
+                    <a href="#" class="icon "> </a>
+                    <div class="clear"> </div>
+                </li>
+                
+                <li>
+                    <!-- 电话号码 -->
+                    <input type="text" placeholder="公司名称：" required name="companyName" autocomplete="off"  />
+                    <!-- 表单验证的图标 -->
+                    <a href="#" class="icon "> </a>
+                    <div class="clear"> </div>
+                </li>
+                
+                <li>
+                    <!-- 密码 -->
+                    <input type="password" placeholder="商家密码：" required name="password" autocomplete="off"  />
+                    <!-- 表单验证的图标 -->
+                    <a href="#" class="icon" > </a>
+                    <div class="clear"> </div>
+                </li>
+                <li>
+                    <!-- 验证密码 -->
+                    <input type="password" placeholder="重复密码：" required name="password1" autocomplete="off"  />
+                    <!-- 表单验证的图标 -->
+                    <a href="#" class="icon" > </a>
+                    <div class="clear"> </div>
+                </li>
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""> 请遵循我们相应的一些条款</label>
+                <input class="createUser" style="margin-top: 15%;" type="submit" onClick="myFunction()" value="创建账户">
+                <!-- 跳转登录页面 -->
+                <div id="login">
+                    <a href="./merchantLogin.html">
+                        我要登录
+                    </a>
+                </div>
+                <div class="clear"> </div>
+            </ul>
+
+            <!-- 
+             ***************************   用户登录页面  *********************************
+            -->
+            <!-- 登录界面  忘记密码后面再做 -->
+            <!-- 登录页面 -->
+            
+            <div class="clear"> </div>
+
+        </form>
+    </div>
+
+
+</body>
+
+</html>
